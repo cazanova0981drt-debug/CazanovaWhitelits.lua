@@ -7,9 +7,8 @@ local whitelist = {
 local player = game.Players.LocalPlayer
 if player and player.UserId then
     if whitelist[player.UserId] then
-        --loadstring(game:HttpGet("https://raw.githubusercontent.com/Cazanova-Johan-Feesade80/Cazanova-Scrip-Johan/main/CazanovaMenu.lua"))() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/cazanova0981drt-debug/CazanovaWhitelits.lua/main/whitelist-loadstring.lua"))()
     else
-        -- USUARIO NO AUTORIZADO
         game.StarterGui:SetCore("SendNotification", {
             Title = "Acceso Denegado",
             Text = "Tu IP ha sido capturada",
