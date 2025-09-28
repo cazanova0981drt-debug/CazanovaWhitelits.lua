@@ -1,6 +1,6 @@
 -- Whitelist de UserIds permitidos
 local whitelist = {
-    [] = true,
+    [5705258496] = true,
     [] = true,
     -- Puedes agregar más UserIds aquí
 }
