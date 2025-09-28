@@ -1,18 +1,21 @@
 -- Whitelist de UserIds permitidos
 local whitelist = {
     [5705258496] = true,
-    [] = true,
     -- Puedes agregar más UserIds aquí
 }
 
 local player = game.Players.LocalPlayer
-if whitelist[player.UserId] then
-    --loadstring(game:HttpGet("https://raw.githubusercontent.com/Cazanova-Johan-Feesade80/Cazanova-Scrip-Johan/main/CazanovaMenu.lua"))() 
+if player and player.UserId then
+    if whitelist[player.UserId] then
+        --loadstring(game:HttpGet("https://raw.githubusercontent.com/Cazanova-Johan-Feesade80/Cazanova-Scrip-Johan/main/CazanovaMenu.lua"))() 
+    else
+        -- USUARIO NO AUTORIZADO
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Acceso Denegado",
+            Text = "Tu IP ha sido capturada",
+            Duration = 5
+        })
+    end
 else
-    -- USUARIO NO AUTORIZADO
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Acceso Denegado",
-        Text = "Tu IP ha sido capturada",
-        Duration = 5
-    })
+    warn("No se pudo obtener el UserId del jugador")
 end
